@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://192.168.135.155:3306/grafana?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
     username: root
     password: wuyou68762
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -27,8 +27,8 @@ spring:
     cache: false
 mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-logging:
-  level:
-    com.wu: debug
+regCenter:
+  serverList: 127.0.0.1:2181
+  namespace: elasticjob
+server:
+  port: 8898
