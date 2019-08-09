@@ -1,3 +1,4 @@
+/*
 package com.wu.chartwu.config;
 
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
@@ -20,16 +21,21 @@ public class JobRegistryCenterConfig {
 	private final String shardingItemParameters = "0=A,1=B,2=C";
 	private final String jobParameters = "parameter";
 
-	/*@Autowired
+	*/
+/*@Autowired
 	private ZookeeperRegistryCenter regCenter;
 
 
-	*//*@Bean(initMethod = "init")
+	*//*
+*/
+/*@Bean(initMethod = "init")
 	public ZookeeperRegistryCenter regCenter(@Value("${regCenter.serverList}") final String serverList,
 											 @Value("${regCenter.namespace}") final String namespace) {
 		ZookeeperConfiguration zc = new ZookeeperConfiguration(serverList, namespace);
 		return new ZookeeperRegistryCenter(zc);
 	}*//*
+*/
+/*
 
 
 	@Bean
@@ -41,7 +47,8 @@ public class JobRegistryCenterConfig {
 	public JobScheduler simpleJobScheduler(final SimpleJob simpleJob) {
 		return new SpringJobScheduler(simpleJob, regCenter, getLiteJobConfiguration(simpleJob.getClass(),
 				cron, shardingTotalCount, shardingItemParameters, jobParameters));
-	}*/
+	}*//*
+
 
 
 	private LiteJobConfiguration getLiteJobConfiguration(final Class<? extends SimpleJob> jobClass,
@@ -76,3 +83,4 @@ public class JobRegistryCenterConfig {
 		System.out.println(zk);
 	}
 }
+*/

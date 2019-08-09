@@ -7,7 +7,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import java.nio.charset.Charset;
 
 @Service
 public class HttpTest {
@@ -29,11 +32,31 @@ public class HttpTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception(e);
+		}finally {
 		}
 	}
 
 //	@Async("asyncExecutor")
 	public void testThreadpool(int i){
 		System.out.println(String.format("线程名：%s,value:%d",Thread.currentThread().getName(),i));
+	}
+
+	@Cacheable(value = "wu:method",key="'getRedis'")
+	public String getRedis(){
+		System.out.println(11111111);
+		return "sdsdsd";
+	}
+	public void test() throws Exception {
+		String url = "https://www.iesdouyin.com/share/user/110677980134";
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpGet httpGet = new HttpGet(url);
+		RequestConfig requestConfig = RequestConfig.custom()
+				.setSocketTimeout(10000).setConnectTimeout(20000)
+				.setConnectionRequestTimeout(10000).build();
+		httpGet.setConfig(requestConfig);
+		CloseableHttpResponse response = httpClient.execute(httpGet);
+		HttpEntity entity = response.getEntity();
+		String str = EntityUtils.toString(entity, Charset.forName("utf-8"));
+		System.out.println(str);
 	}
 }

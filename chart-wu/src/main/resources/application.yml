@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    url: jdbc:mysql://127.0.0.1:3306/grafana?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
     username: root
     password: wuyou68762
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,10 +25,17 @@ spring:
         enabled: true
   thymeleaf:
     cache: false
+#  redis:
+#    host: 192.168.135.155
+#    port: 6379
+#    jedis:
+#      pool:
+#        max-active: 10
+#        min-idle: 0
 mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
-regCenter:
-  serverList: 127.0.0.1:2181
-  namespace: elasticjob
+#regCenter:
+#  serverList: 127.0.0.1:2181
+#  namespace: elasticjob
 server:
   port: 8898

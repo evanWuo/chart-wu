@@ -1,3 +1,4 @@
+/*
 package com.wu.chartwu.job;
 
 import com.dangdang.ddframe.job.api.ShardingContext;
@@ -34,3 +35,4 @@ public class FirstJob implements SimpleJob {
 
 	}
 }
+*/

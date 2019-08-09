@@ -1,5 +1,6 @@
 package com.wu.chartwu;
 
+import com.wu.chartwu.util.OutUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,7 @@ public class ChartWuApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ChartWuApplication.class, args);
-		System.out.println("sdddddd");
+		System.out.println(OutUtil.endOut());
 	}
 
 }
