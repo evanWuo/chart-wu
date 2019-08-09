@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class TestCfg {
 	@Bean
 	public Testc testc(){
+		System.out.println(1212);
 		return new Testc();
 	}
 }
